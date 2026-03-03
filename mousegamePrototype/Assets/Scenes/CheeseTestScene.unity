@@ -14137,6 +14137,10 @@ PrefabInstance:
       propertyPath: neededTeeth
       value: 
       objectReference: {fileID: 11400000, guid: 199f5952b7f15134eba4b7e53f80581c, type: 2}
+    - target: {fileID: 3262034778332472978, guid: 9152010eeb1f1ed41894bc51a793bee0, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 1669144344}
     - target: {fileID: 3969591249150271189, guid: 9152010eeb1f1ed41894bc51a793bee0, type: 3}
       propertyPath: m_LocalPosition.x
       value: -39.371944
