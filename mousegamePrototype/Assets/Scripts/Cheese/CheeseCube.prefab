@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3262034778332472978}
   m_Layer: 0
   m_Name: CheeseCube
-  m_TagString: Untagged
+  m_TagString: Cheese
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123,3 +123,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distanceForDisable: 5
   playerTransform: {fileID: 0}
+  sidesWidthCubes: 0

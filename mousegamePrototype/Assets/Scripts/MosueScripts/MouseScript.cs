@@ -20,6 +20,9 @@ public class MouseScript : MonoBehaviour
     [Header("For moving the camera")]
     public Transform sceneCamera;
 
+    [Space(10.0f)]
+    [Header("For eating cheese")]
+    public BoxCollider eatingCollider;
     // rigid
     Rigidbody rb;
     void Start()
@@ -32,12 +35,10 @@ public class MouseScript : MonoBehaviour
     void Update()
     {
         mouseMovement();
+        gettingMouseInput();
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-       
-    }
+    
     private void OnCollisionEnter(Collision collision)
     {
         eatingItem(collision.gameObject);
@@ -82,5 +83,15 @@ public class MouseScript : MonoBehaviour
 
         // apply jump
         rb.AddForce(new Vector3(0, jumpPulse, 0), ForceMode.Impulse);
+    }
+
+    void gettingMouseInput()
+    {
+        if (Input.GetMouseButton(0))
+        {
+            eatingCollider.enabled = true;
+            return;
+        }
+        eatingCollider.enabled = false;
     }
 }
