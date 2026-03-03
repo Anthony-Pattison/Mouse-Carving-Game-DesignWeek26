@@ -20,7 +20,11 @@ public class CheesePrefabClass : MonoBehaviour
 
     [Space(10.0f)]
     [Header("Teeth needed")]
-    public TeethObjects neededTeeth; 
+    public TeethObjects neededTeeth;
+
+    [Space(10.0f)]
+    [Header("How much food it give to the mouse")]
+    public int foodPoints = 0;
 
     BoxCollider myBoxCollider;
     Material fadeMaterial;
@@ -30,7 +34,9 @@ public class CheesePrefabClass : MonoBehaviour
         eventcore = GameObject.Find("EventCore").GetComponent<EventCore>();
         fadeMaterial = new Material(GetComponent<MeshRenderer>().material);
         myBoxCollider = GetComponent<BoxCollider>();
+
         eventcore.CarveItem.AddListener(checkSurroundings);
+        //eventcore.MouseEatingCheese.AddListener(giveFoodToMouse);
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -120,6 +126,14 @@ public class CheesePrefabClass : MonoBehaviour
         {
             GetComponent<MeshRenderer>().enabled = true;
         }
+    }
+    void giveFoodToMouse(MouseScript ms)
+    {
+        if (ms.foodMeter > 5)
+        {
+            return;
+        }
+        ms.foodMeter += foodPoints;
     }
     IEnumerator FadeOut()
     {

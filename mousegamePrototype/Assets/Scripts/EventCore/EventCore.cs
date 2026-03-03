@@ -8,6 +8,7 @@ public class EventCore : MonoBehaviour
 
     public UnityEvent<MouseScript> TeethChange;
 
+    public UnityEvent<MouseScript> MouseEatingCheese;
     private void Start()
     {
         Application.targetFrameRate = 1000;

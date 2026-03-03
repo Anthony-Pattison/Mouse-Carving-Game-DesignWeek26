@@ -23,6 +23,10 @@ public class MouseScript : MonoBehaviour
     [Space(10.0f)]
     [Header("For eating cheese")]
     public BoxCollider eatingCollider;
+    [Range(0.0f, 5.0f)]
+    public int foodMeter;
+
+    public GameObject throwUpBlock;
     // rigid
     Rigidbody rb;
 
@@ -34,30 +38,39 @@ public class MouseScript : MonoBehaviour
 
     void Start()
     {
+        Mathf.Clamp(foodMeter, 0f, 5.0f);
         eventcore = GameObject.Find("EventCore").GetComponent<EventCore>();
         rb = GetComponent<Rigidbody>();
+
+        eventcore.TeethChange.Invoke(this);
     }
 
     // Update is called once per frame
     void Update()
     {
         gettingInput();
+        mouseMovement();
         swappingTeeth();
         gettingMouseInput();
-    }
-    private void FixedUpdate()
-    {
-        mouseMovement();
+        spittingOutFood();
     }
 
-    private void OnCollisionEnter(Collision collision)
+
+    private void OnTriggerEnter(Collider other)
     {
-        eatingItem(collision.gameObject);
+        eatingItem(other.gameObject);
     }
     void eatingItem(GameObject CarvedItem)
     {
         print("invoking");
-        eventcore.CarveItem.Invoke(CarvedItem);
+        if (CarvedItem.CompareTag("Cheese"))
+        {
+            if (foodMeter < 5)
+            {
+                foodMeter++;
+            }
+            eventcore.MouseEatingCheese.Invoke(this);
+        }
     }
     void swappingTeeth()
     {
@@ -114,5 +127,25 @@ public class MouseScript : MonoBehaviour
             return;
         }
         eatingCollider.enabled = false;
+    }
+
+    void spittingOutFood()
+    {
+        if (foodMeter < 5)
+            return;
+        if (Input.GetMouseButtonDown(1))
+        {
+            Vector3 scaleOffset = transform.lossyScale;
+            Vector3 pos = transform.position;
+
+            GameObject pukeBlock = Instantiate(throwUpBlock, pos + new Vector3(
+                0,
+                -0.75f,
+                scaleOffset.z + throwUpBlock.transform.localScale.z + 1),
+                Quaternion.identity);
+
+            pukeBlock.GetComponent<CheesePrefabClass>().playerTransform = transform;
+            foodMeter = 0;
+        }
     }
 }
