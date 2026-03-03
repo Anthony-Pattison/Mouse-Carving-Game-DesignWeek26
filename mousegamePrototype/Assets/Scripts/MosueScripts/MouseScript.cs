@@ -25,6 +25,13 @@ public class MouseScript : MonoBehaviour
     public BoxCollider eatingCollider;
     // rigid
     Rigidbody rb;
+
+    float xInput;
+    float zInput;
+    //rotation
+    float yRotation = 0;
+    float jumpPulse = 0;
+
     void Start()
     {
         eventcore = GameObject.Find("EventCore").GetComponent<EventCore>();
@@ -34,11 +41,15 @@ public class MouseScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        mouseMovement();
+        gettingInput();
+        swappingTeeth();
         gettingMouseInput();
     }
+    private void FixedUpdate()
+    {
+        mouseMovement();
+    }
 
-    
     private void OnCollisionEnter(Collision collision)
     {
         eatingItem(collision.gameObject);
@@ -48,16 +59,23 @@ public class MouseScript : MonoBehaviour
         print("invoking");
         eventcore.CarveItem.Invoke(CarvedItem);
     }
-    void mouseMovement()
+    void swappingTeeth()
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            eventcore.TeethChange.Invoke(this);
+        }
+    }
+    void gettingInput()
     {
         // getting input
 
         // movement
-        float xInput = Input.GetAxis("Horizontal");
-        float zInput = Input.GetAxis("Vertical");
+        xInput = Input.GetAxis("Horizontal");
+        zInput = Input.GetAxis("Vertical");
         //rotation
-        float yRotation = 0;
-        float jumpPulse = 0;
+        yRotation = 0;
+        jumpPulse = 0;
         if (Input.GetKey(KeyCode.E))
         {
             yRotation = rotationAmount;
@@ -70,6 +88,9 @@ public class MouseScript : MonoBehaviour
         {
             jumpPulse = jumpAmount;
         }
+    }
+    void mouseMovement()
+    {
         // calculating movement
         Vector3 movement = (transform.right * xInput + transform.forward * zInput) * speed;
         Vector3 rotation = new Vector3(0, yRotation, 0);

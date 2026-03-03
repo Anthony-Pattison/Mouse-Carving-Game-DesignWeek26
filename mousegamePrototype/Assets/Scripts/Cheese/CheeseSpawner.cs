@@ -5,6 +5,10 @@ public class CheeseSpawner : MonoBehaviour
     [Header("Cheese")]
     public GameObject cheeseToSpawn;
 
+    [Header("Teeth needed to eat material")]
+    [SerializeField]
+    TeethObjects teethNeeded;
+
     [Space(10.0f)]
     [Header("How much cheese per axis")]
     [SerializeField]
@@ -27,6 +31,7 @@ public class CheeseSpawner : MonoBehaviour
                         cheeseToSpawn.transform.localScale.z * t,
                         cheeseToSpawn.transform.localScale.z * e), Quaternion.identity, transform);
                     _tempCheese.GetComponent<CheesePrefabClass>().playerTransform = GameObject.Find("mousePlayer").transform;
+                    cheeseToSpawn.GetComponent<CheesePrefabClass>().neededTeeth = teethNeeded;
                 }
             }
         }

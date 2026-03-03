@@ -7,10 +7,21 @@ using UnityEngine.Rendering;
 public class CheesePrefabClass : MonoBehaviour
 {
     EventCore eventcore;
+    [Header("Distance from the play until the mesh renderer gets turned off")]
     public float distanceForDisable = 5;
+
+    [Space(10.0f)]
+    [Header("Players transform")]
     public Transform playerTransform;
-    public int sidesWidthCubes = 0;
     
+    [Space(10.0f)]
+    [Header("Player transform")]
+    public int sidesWidthCubes = 0;
+
+    [Space(10.0f)]
+    [Header("Teeth needed")]
+    public TeethObjects neededTeeth; 
+
     BoxCollider myBoxCollider;
     Material fadeMaterial;
    
@@ -23,7 +34,16 @@ public class CheesePrefabClass : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        MouseScript ms;
+        if (other.gameObject.GetComponent<MouseScript>() != null)
+        {
+            ms = other.gameObject.GetComponent<MouseScript>();
+        }
+        else
+        {
+            return;
+        }
+        if (ms.teethSet == neededTeeth)
         {
             this.gameObject.SetActive(false);
         }

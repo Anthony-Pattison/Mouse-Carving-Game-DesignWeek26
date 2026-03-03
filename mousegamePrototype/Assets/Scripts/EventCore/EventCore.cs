@@ -4,7 +4,9 @@ using UnityEngine.Rendering;
 
 public class EventCore : MonoBehaviour
 {
-   public UnityEvent<GameObject> CarveItem;
+    public UnityEvent<GameObject> CarveItem;
+
+    public UnityEvent<MouseScript> TeethChange;
 
     private void Start()
     {
