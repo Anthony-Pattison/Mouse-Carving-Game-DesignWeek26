@@ -18,6 +18,7 @@ public class CheeseSpawner : MonoBehaviour
     [SerializeField]
     float zCheese;
 
+    public MouseScript ms;
     [ContextMenu("Spawn Cheese")]
     private void spawnCheese()
     {
@@ -32,6 +33,7 @@ public class CheeseSpawner : MonoBehaviour
                         cheeseToSpawn.transform.localScale.z * e), Quaternion.identity, transform);
                     _tempCheese.GetComponent<CheesePrefabClass>().playerTransform = GameObject.Find("mousePlayer").transform;
                     cheeseToSpawn.GetComponent<CheesePrefabClass>().neededTeeth = teethNeeded;
+                    cheeseToSpawn.GetComponent<CheesePrefabClass>().ms = ms;
                 }
             }
         }

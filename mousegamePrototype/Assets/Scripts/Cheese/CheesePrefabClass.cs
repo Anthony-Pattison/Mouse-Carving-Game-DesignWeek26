@@ -26,6 +26,7 @@ public class CheesePrefabClass : MonoBehaviour
     [Header("How much food it give to the mouse")]
     public int foodPoints = 0;
 
+    public MouseScript ms;
     BoxCollider myBoxCollider;
     Material fadeMaterial;
    
@@ -40,17 +41,13 @@ public class CheesePrefabClass : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        MouseScript ms;
-        if (other.gameObject.GetComponent<MouseScript>() != null)
-        {
-            ms = other.gameObject.GetComponent<MouseScript>();
-        }
-        else
-        {
+        print("miss");
+
+        if (!other.gameObject.CompareTag("Player"))
             return;
-        }
         if (ms.teethSet == neededTeeth)
         {
+            ms.eatingItem(this.gameObject);
             this.gameObject.SetActive(false);
         }
     }

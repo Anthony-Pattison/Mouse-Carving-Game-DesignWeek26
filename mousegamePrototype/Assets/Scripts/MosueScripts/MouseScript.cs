@@ -42,7 +42,8 @@ public class MouseScript : MonoBehaviour
         eventcore = GameObject.Find("EventCore").GetComponent<EventCore>();
         rb = GetComponent<Rigidbody>();
 
-        eventcore.TeethChange.Invoke(this);
+
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
@@ -58,9 +59,10 @@ public class MouseScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        eventcore.TeethChange.Invoke(this);
         eatingItem(other.gameObject);
     }
-    void eatingItem(GameObject CarvedItem)
+   public void eatingItem(GameObject CarvedItem)
     {
         print("invoking");
         if (CarvedItem.CompareTag("Cheese"))
@@ -108,15 +110,11 @@ public class MouseScript : MonoBehaviour
         Vector3 movement = (transform.right * xInput + transform.forward * zInput) * speed;
         Vector3 rotation = new Vector3(0, yRotation, 0);
 
-        // applying movement and rotation
-        transform.eulerAngles += rotation * Time.deltaTime;
-        sceneCamera.eulerAngles += rotation * Time.deltaTime;
-
         transform.position += movement * Time.deltaTime;
         sceneCamera.position += movement * Time.deltaTime;
 
         // apply jump
-        rb.AddForce(new Vector3(0, jumpPulse, 0), ForceMode.Impulse);
+        rb.AddForce(new Vector3(0, jumpPulse * 20, 0), ForceMode.Impulse);
     }
 
     void gettingMouseInput()
@@ -136,16 +134,19 @@ public class MouseScript : MonoBehaviour
         if (Input.GetMouseButtonDown(1))
         {
             Vector3 scaleOffset = transform.lossyScale;
-            Vector3 pos = transform.position;
+            Vector3 pos = sceneCamera.position;
 
             GameObject pukeBlock = Instantiate(throwUpBlock, pos + new Vector3(
                 0,
-                -0.75f,
-                scaleOffset.z + throwUpBlock.transform.localScale.z + 1),
+                0,
+                1),
                 Quaternion.identity);
 
             pukeBlock.GetComponent<CheesePrefabClass>().playerTransform = transform;
             foodMeter = 0;
+            eventcore.MouseEatingCheese.Invoke(this);
         }
     }
+
+   
 }
