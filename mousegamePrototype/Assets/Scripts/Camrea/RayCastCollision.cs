@@ -13,17 +13,11 @@ public class RayCastCollision : MonoBehaviour
     }
     void Update()
     {
-        Debug.DrawRay(transform.position, transform.forward, Color.red);
-
-
+        Debug.DrawLine(transform.position, transform.position + new Vector3(0,0,raycastDistance));
         if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, raycastDistance))
         {
-
-            if (hit.collider != null)
-            {
-                ms.eatingItem(hit.collider.gameObject);
-                print(hit.collider.name);
-            }
+            ms.cheeseBlockToEat = hit.collider.gameObject;
+            print(hit.collider.name);
         }
     }
 }

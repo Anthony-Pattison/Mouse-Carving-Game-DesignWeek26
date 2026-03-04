@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class MouseScript : MonoBehaviour
 {
@@ -62,32 +63,35 @@ public class MouseScript : MonoBehaviour
         mouseMovement();
         swappingTeeth();
         spittingOutFood();
-
+        mouseInput();
         if (Input.GetKeyDown(gameReset))
         {
             eventcore.ResetTheGame.Invoke();
         }
+
     }
 
-
-    private void OnTriggerEnter(Collider other)
+    void mouseInput()
     {
-        eventcore.TeethChange.Invoke(this);
-        eatingItem(other.gameObject);
-    }
-   public void eatingItem(GameObject CarvedItem)
-    {
-        print("invoking");
-        if (CarvedItem.CompareTag("Cheese"))
+        if (cheeseBlockToEat == null)
+            return;
+        if (Input.GetMouseButtonDown(0))
         {
-            cheeseBlockToEat.GetComponent<CheesePrefabClass>().turnOffCheese();
-
-            if (foodMeter < 5)
-            {
-                foodMeter++;
-            }
-            eventcore.MouseEatingCheese.Invoke(this);
+            eatingItem(cheeseBlockToEat);
         }
+    }
+
+    public void eatingItem(GameObject CarvedItem)
+    {
+
+        CarvedItem.GetComponent<CheesePrefabClass>().turnOffCheese();
+
+        if (foodMeter < 5)
+        {
+            foodMeter++;
+        }
+        eventcore.MouseEatingCheese.Invoke(this);
+
     }
     void swappingTeeth()
     {
@@ -132,7 +136,7 @@ public class MouseScript : MonoBehaviour
         rb.AddForce(new Vector3(0, jumpPulse * 20, 0), ForceMode.Impulse);
     }
 
-    
+
 
     void spittingOutFood()
     {
@@ -151,7 +155,7 @@ public class MouseScript : MonoBehaviour
         }
     }
 
-   void resetPlayState()
+    void resetPlayState()
     {
         transform.position = playerStartPosition;
         foodMeter = 0;
