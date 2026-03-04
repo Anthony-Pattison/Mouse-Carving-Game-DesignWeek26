@@ -29,7 +29,6 @@ public class CheesePrefabClass : MonoBehaviour
     public MouseScript ms;
     BoxCollider myBoxCollider;
     Material fadeMaterial;
-   
     private void Start()
     {
         eventcore = GameObject.Find("EventCore").GetComponent<EventCore>();
@@ -42,9 +41,9 @@ public class CheesePrefabClass : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         print("miss");
-
-        if (!other.gameObject.CompareTag("Player"))
-            return;
+    }
+    public void turnOffCheese()
+    {
         if (ms.teethSet == neededTeeth)
         {
             ms.eatingItem(this.gameObject);
@@ -52,7 +51,6 @@ public class CheesePrefabClass : MonoBehaviour
             StartCoroutine(FadeOut());
         }
     }
-  
     private void Update()
     {
         checkSurroundings(null);

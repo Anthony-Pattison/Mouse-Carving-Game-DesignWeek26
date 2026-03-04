@@ -42,6 +42,7 @@ public class CheeseSpawner : MonoBehaviour
                     _tempCheese.GetComponent<CheesePrefabClass>().playerTransform = GameObject.Find("mousePlayer").transform;
                     cheeseToSpawn.GetComponent<CheesePrefabClass>().neededTeeth = teethNeeded;
                     cheeseToSpawn.GetComponent<CheesePrefabClass>().ms = ms;
+                    _tempCheese.isStatic = true;
                 }
             }
         }
