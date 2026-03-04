@@ -48,7 +48,8 @@ public class CheesePrefabClass : MonoBehaviour
         if (ms.teethSet == neededTeeth)
         {
             ms.eatingItem(this.gameObject);
-            this.gameObject.SetActive(false);
+            GetComponent<BoxCollider>().enabled = false;
+            StartCoroutine(FadeOut());
         }
     }
   
@@ -130,6 +131,16 @@ public class CheesePrefabClass : MonoBehaviour
     }
     IEnumerator FadeOut()
     {
-        yield return new WaitForSeconds(1.0f);
+        GetComponentInChildren<MeshRenderer>().material = fadeMaterial;
+        float fadeOut = 1;
+
+        while (fadeOut > 0)
+        {
+            print("click");
+            fadeMaterial.color = new Color(1, 1,0,fadeOut);
+            fadeOut -= 0.1f;
+            yield return new WaitForSeconds(0.1f);
+        }
+        this.gameObject.SetActive(false);
     }
 }
