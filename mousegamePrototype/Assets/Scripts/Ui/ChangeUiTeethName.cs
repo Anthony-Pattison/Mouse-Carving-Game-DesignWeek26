@@ -13,6 +13,7 @@ public class ChangeUiTeethName : MonoBehaviour
         eventCore = GameObject.Find("EventCore").GetComponent<EventCore>();
         eventCore.TeethChange.AddListener(callText);
         eventCore.MouseEatingCheese.AddListener(changeHunger);
+
     }
 
     void callText(MouseScript ms)

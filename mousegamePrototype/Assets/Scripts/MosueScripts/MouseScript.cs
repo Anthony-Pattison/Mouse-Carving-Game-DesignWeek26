@@ -32,6 +32,7 @@ public class MouseScript : MonoBehaviour
 
     public GameObject throwUpBlock;
 
+    public GameObject cheeseBlockToEat;
     Vector3 playerStartPosition;
     // rigid
     Rigidbody rb;
@@ -51,6 +52,7 @@ public class MouseScript : MonoBehaviour
 
         eventcore.ResetTheGame.AddListener(resetPlayState);
         Cursor.lockState = CursorLockMode.Locked;
+        eventcore.TeethChange.Invoke(this);
     }
 
     // Update is called once per frame
@@ -59,7 +61,6 @@ public class MouseScript : MonoBehaviour
         gettingInput();
         mouseMovement();
         swappingTeeth();
-        gettingMouseInput();
         spittingOutFood();
 
         if (Input.GetKeyDown(gameReset))
@@ -79,6 +80,8 @@ public class MouseScript : MonoBehaviour
         print("invoking");
         if (CarvedItem.CompareTag("Cheese"))
         {
+            cheeseBlockToEat.GetComponent<CheesePrefabClass>().turnOffCheese();
+
             if (foodMeter < 5)
             {
                 foodMeter++;
@@ -129,15 +132,7 @@ public class MouseScript : MonoBehaviour
         rb.AddForce(new Vector3(0, jumpPulse * 20, 0), ForceMode.Impulse);
     }
 
-    void gettingMouseInput()
-    {
-        if (Input.GetMouseButton(0))
-        {
-            eatingCollider.enabled = true;
-            return;
-        }
-        eatingCollider.enabled = false;
-    }
+    
 
     void spittingOutFood()
     {
@@ -146,13 +141,9 @@ public class MouseScript : MonoBehaviour
         if (Input.GetMouseButtonDown(1))
         {
             Vector3 scaleOffset = transform.lossyScale;
-            Vector3 pos = sceneCamera.position;
+            Vector3 pos = transform.position + transform.forward;
 
-            GameObject pukeBlock = Instantiate(throwUpBlock, pos + new Vector3(
-                0,
-                0,
-                1),
-                Quaternion.identity);
+            GameObject pukeBlock = Instantiate(throwUpBlock, pos, Quaternion.identity);
 
             pukeBlock.GetComponent<CheesePrefabClass>().playerTransform = transform;
             foodMeter = 0;
