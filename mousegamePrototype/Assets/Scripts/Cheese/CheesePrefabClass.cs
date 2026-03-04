@@ -29,6 +29,7 @@ public class CheesePrefabClass : MonoBehaviour
     public MouseScript ms;
     BoxCollider myBoxCollider;
     Material fadeMaterial;
+    bool eaten = false;
     private void Start()
     {
         eventcore = GameObject.Find("EventCore").GetComponent<EventCore>();
@@ -44,16 +45,16 @@ public class CheesePrefabClass : MonoBehaviour
     }
     public void turnOffCheese()
     {
-        if (ms.teethSet == neededTeeth)
+        if (ms.teethSet == neededTeeth && !eaten)
         {
-            ms.eatingItem(this.gameObject);
+            eaten = true;
             GetComponent<BoxCollider>().enabled = false;
             StartCoroutine(FadeOut());
         }
     }
     private void Update()
     {
-        checkSurroundings(null);
+      //  checkSurroundings(null);
 
         disableBoxCollider();
         disableRenderer();
