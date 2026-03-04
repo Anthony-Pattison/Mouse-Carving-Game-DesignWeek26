@@ -51,11 +51,7 @@ public class CheesePrefabClass : MonoBehaviour
             this.gameObject.SetActive(false);
         }
     }
-    private void OnCollisionEnter(Collision collision)
-    {
-
-        
-    }
+  
     private void Update()
     {
         checkSurroundings(null);

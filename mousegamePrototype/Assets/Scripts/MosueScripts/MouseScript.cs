@@ -26,7 +26,13 @@ public class MouseScript : MonoBehaviour
     [Range(0.0f, 5.0f)]
     public int foodMeter;
 
+    [Space(10.0f)]
+    [Header("For Resetting game State")]
+    public KeyCode gameReset;
+
     public GameObject throwUpBlock;
+
+    Vector3 playerStartPosition;
     // rigid
     Rigidbody rb;
 
@@ -38,11 +44,12 @@ public class MouseScript : MonoBehaviour
 
     void Start()
     {
-        Mathf.Clamp(foodMeter, 0f, 5.0f);
+        playerStartPosition = transform.position;
+
         eventcore = GameObject.Find("EventCore").GetComponent<EventCore>();
         rb = GetComponent<Rigidbody>();
 
-
+        eventcore.ResetTheGame.AddListener(resetPlayState);
         Cursor.lockState = CursorLockMode.Locked;
     }
 
@@ -54,6 +61,11 @@ public class MouseScript : MonoBehaviour
         swappingTeeth();
         gettingMouseInput();
         spittingOutFood();
+
+        if (Input.GetKeyDown(gameReset))
+        {
+            eventcore.ResetTheGame.Invoke();
+        }
     }
 
 
@@ -148,5 +160,10 @@ public class MouseScript : MonoBehaviour
         }
     }
 
-   
+   void resetPlayState()
+    {
+        transform.position = playerStartPosition;
+        foodMeter = 0;
+        eventcore.MouseEatingCheese.Invoke(this);
+    }
 }

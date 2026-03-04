@@ -19,6 +19,14 @@ public class CheeseSpawner : MonoBehaviour
     float zCheese;
 
     public MouseScript ms;
+
+    EventCore eventcore;
+
+    public void Start()
+    {
+        eventcore = GameObject.Find("EventCore").GetComponent<EventCore>();
+        eventcore.ResetTheGame.AddListener(resetPlayState);
+    }
     [ContextMenu("Spawn Cheese")]
     private void spawnCheese()
     {
@@ -36,6 +44,16 @@ public class CheeseSpawner : MonoBehaviour
                     cheeseToSpawn.GetComponent<CheesePrefabClass>().ms = ms;
                 }
             }
+        }
+    }
+
+    public void resetPlayState()
+    {
+        int childCount = gameObject.transform.childCount;
+
+        for (int i = 0; i < childCount; i++)
+        {
+            gameObject.transform.GetChild(i).gameObject.SetActive(true);
         }
     }
 }
