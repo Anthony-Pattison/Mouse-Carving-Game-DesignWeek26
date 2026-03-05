@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -15,7 +16,7 @@ public class MouseScript : MonoBehaviour
     float jumpAmount = 10.0f;
     [SerializeField]
     float clothJumpBonus = 2.0f;
-
+    public bool canJump = false;
     [Space(10.0f)]
     [Header("Current Teeth set on the mouse")]
     public TeethObjects teethSet;
@@ -112,8 +113,8 @@ public class MouseScript : MonoBehaviour
             return;
 
         previousEatenMaterials.Add(CarvedItem);
-        
-        
+
+
         if (foodMeter < 5)
         {
             foodMeter++;
@@ -121,7 +122,7 @@ public class MouseScript : MonoBehaviour
         eventcore.MouseEatingCheese.Invoke(this);
 
     }
-    
+
     void gettingInput()
     {
         // getting input
@@ -140,7 +141,7 @@ public class MouseScript : MonoBehaviour
         {
             yRotation = -rotationAmount;
         }
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded())
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded() && canJump)
         {
             jumpPulse = jumpAmount;
         }
@@ -149,7 +150,7 @@ public class MouseScript : MonoBehaviour
     {
         // calculating movement
 
-        
+
         Vector3 movement = (transform.right * xInput + transform.forward * zInput) * speed;
 
         movement.y = checkBlockOfCheese();
@@ -169,7 +170,7 @@ public class MouseScript : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(1))
         {
-            
+
             // remove form eaten items
             int itemPlace = previousEatenMaterials.Count - 1;
             if (itemPlace < 0)
@@ -181,10 +182,10 @@ public class MouseScript : MonoBehaviour
 
             // spawn block
             Vector3 scaleOffset = transform.lossyScale;
-            Vector3 pos = transform.position + rayCastOffset + new Vector3(0,0.5f,0); ;
+            Vector3 pos = transform.position + rayCastOffset + new Vector3(0, 0.5f, 0); ;
 
             GameObject pukeBlock = Instantiate(throwUpBlock, pos, Quaternion.identity);
-            pukeBlock.tag = "Puke";
+            pukeBlock.tag = "puke";
             pukeBlock.GetComponent<CheesePrefabClass>().playerTransform = transform;
             pukeBlock.GetComponent<CheesePrefabClass>().eaten = true;
             setThrowUpBlock(pukeBlock, materialThrowingUp);
@@ -233,23 +234,45 @@ public class MouseScript : MonoBehaviour
     }
     float checkBlockOfCheese()
     {
-       // Debug.DrawLine(transform.position - new Vector3(0, .2f, 0), (transform.position - new Vector3(0, .2f, 0)) + transform.forward, Color.red);
-        if (Physics.Raycast(transform.position - new Vector3(0,.2f,0), transform.forward, out RaycastHit hit, 1))
+        Debug.DrawLine(transform.position - new Vector3(0, .25f, 0), (transform.position - new Vector3(0, .2f, 0)) + transform.forward, Color.red);
+        if (Physics.Raycast(transform.position - new Vector3(0, .3f, 0), transform.forward, out RaycastHit hit, 1))
         {
-            if (hit.collider.gameObject.GetComponent<CheesePrefabClass>() == null)
+            if (hit.collider.gameObject.GetComponent<CheesePrefabClass>() != null)
+            {
+                CheesePrefabClass Cheese = hit.collider.gameObject.GetComponent<CheesePrefabClass>();
+                if (Cheese.neededTeeth.chosenTeethSet == Teeth.cheeseTeeth && Cheese.eaten)
+                {
+
+                    StopAllCoroutines();
+                    rb.isKinematic = true;
+                    StartCoroutine(turnOnRigidBody());
+                }
+            }
+
+        }
+
+        if (Physics.Raycast(transform.position - new Vector3(0, .2f, 0), transform.forward, out RaycastHit _hit, 1))
+        {
+            if (_hit.collider.gameObject.GetComponent<CheesePrefabClass>() == null)
             {
                 return 0;
             }
 
-            CheesePrefabClass Cheese = hit.collider.gameObject.GetComponent<CheesePrefabClass>();
+            CheesePrefabClass Cheese = _hit.collider.gameObject.GetComponent<CheesePrefabClass>();
 
             if (Cheese.neededTeeth.chosenTeethSet == Teeth.cheeseTeeth && Cheese.eaten)
             {
                 return 5;
             }
-           
+
         }
         return 0;
+    }
+    IEnumerator turnOnRigidBody()
+    {
+        yield return new WaitForSeconds(.25f);
+        rb.isKinematic = false;
+
     }
     void resetPlayState()
     {
