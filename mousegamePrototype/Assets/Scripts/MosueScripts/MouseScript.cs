@@ -7,11 +7,7 @@ public struct audioClip
 {
     public string soundName;
     public AudioClip audio;
-
-    
 }
-
-
 public class MouseScript : MonoBehaviour
 {
     EventCore eventcore;
