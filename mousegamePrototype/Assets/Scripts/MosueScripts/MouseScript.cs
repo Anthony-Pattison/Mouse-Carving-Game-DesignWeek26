@@ -183,6 +183,7 @@ public class MouseScript : MonoBehaviour
                 return;
             }
             GameObject materialThrowingUp = previousEatenMaterials[itemPlace];
+            eventcore.mousePuking.Invoke();
             previousEatenMaterials.RemoveAt(itemPlace);
 
             // spawn block

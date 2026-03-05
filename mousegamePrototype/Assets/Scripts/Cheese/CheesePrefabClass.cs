@@ -45,6 +45,11 @@ public class CheesePrefabClass : MonoBehaviour
     }
     public bool turnOffCheese()
     {
+        if (this.gameObject.CompareTag("puke"))
+        {
+            StartCoroutine(FadeOut());
+            return false;
+        }
         if (ms.teethSet.level >= neededTeeth.level && !eaten)
         {
             eaten = true;

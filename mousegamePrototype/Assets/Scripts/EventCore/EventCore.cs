@@ -10,6 +10,10 @@ public class EventCore : MonoBehaviour
 
     public UnityEvent<MouseScript> MouseEatingCheese;
 
+    public UnityEvent mousePuking;
+
+    public UnityEvent collectPeanut;
+
     public UnityEvent ResetTheGame;
     private void Start()
     {
