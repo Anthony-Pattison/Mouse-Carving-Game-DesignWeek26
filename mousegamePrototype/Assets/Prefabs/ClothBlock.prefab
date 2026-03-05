@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -39.371944, y: 0.24999905, z: -32.30819}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -124,6 +124,7 @@ MonoBehaviour:
   distanceForDisable: 5
   playerTransform: {fileID: 0}
   sidesWidthCubes: 0
-  neededTeeth: {fileID: 11400000, guid: 413f312abd0260443aedc77373d1b506, type: 2}
+  neededTeeth: {fileID: 11400000, guid: 199f5952b7f15134eba4b7e53f80581c, type: 2}
   foodPoints: 0
   ms: {fileID: 0}
+  eaten: 0
