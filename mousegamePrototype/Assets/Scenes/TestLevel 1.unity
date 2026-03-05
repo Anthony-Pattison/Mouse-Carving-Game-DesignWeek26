@@ -25514,7 +25514,7 @@ Transform:
   m_GameObject: {fileID: 590059498}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -21.690002, y: 0.59800005, z: 0.25}
+  m_LocalPosition: {x: -21.629004, y: 0.57000005, z: 0.25}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -25948,8 +25948,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.5, y: 0.5, z: 0.5}
-  m_Center: {x: 0.00019688964, y: -0.018192038, z: -0.0053032693}
+  m_Size: {x: 0.5, y: 0.7176892, z: 0.5}
+  m_Center: {x: 0.00019689629, y: -0.104875796, z: -0.0053032637}
 --- !u!1 &625249742
 GameObject:
   m_ObjectHideFlags: 0
@@ -30253,7 +30253,7 @@ Transform:
   m_GameObject: {fileID: 730996617}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -21.87, y: 0.073, z: 0.25}
+  m_LocalPosition: {x: -21.852, y: 0.067000076, z: 0.24700022}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -41901,6 +41901,9 @@ MonoBehaviour:
   yellow: {r: 0.6981132, g: 0.6822294, b: 0.023050921, a: 1}
   red: {r: 0.5660378, g: 0, b: 0, a: 1}
   brown: {r: 0.3301887, g: 0.1766854, b: 0, a: 1}
+  cheeseSprite: {fileID: 0}
+  clothSprite: {fileID: 0}
+  woodSprite: {fileID: 0}
   cheeseTeeth: {fileID: 11400000, guid: 199f5952b7f15134eba4b7e53f80581c, type: 2}
   clothTeeth: {fileID: 11400000, guid: 413f312abd0260443aedc77373d1b506, type: 2}
   woodTeeth: {fileID: 11400000, guid: fc5052030cbb7f44daec548b6a4822c9, type: 2}
@@ -68648,7 +68651,7 @@ Transform:
   m_GameObject: {fileID: 2015021056}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -21.681, y: 0.351, z: 0.25}
+  m_LocalPosition: {x: -21.62, y: 0.323, z: 0.25}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -73472,6 +73475,26 @@ PrefabInstance:
     - target: {fileID: 1347702615910409586, guid: 8128cb10c6d6ca44d8c132f6627e0bdb, type: 3}
       propertyPath: eatingCollider
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347702615910409586, guid: 8128cb10c6d6ca44d8c132f6627e0bdb, type: 3}
+      propertyPath: pukeMaterials.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1347702615910409586, guid: 8128cb10c6d6ca44d8c132f6627e0bdb, type: 3}
+      propertyPath: 'pukeMaterials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 831766af95234f748b9a16a650b27247, type: 2}
+    - target: {fileID: 1347702615910409586, guid: 8128cb10c6d6ca44d8c132f6627e0bdb, type: 3}
+      propertyPath: 'pukeMaterials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f81d0b4fa20bb1144a84ed57cdd6e055, type: 2}
+    - target: {fileID: 1347702615910409586, guid: 8128cb10c6d6ca44d8c132f6627e0bdb, type: 3}
+      propertyPath: 'pukeMaterials.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 6bb041fb0c77bf4418c7771e0071fd82, type: 2}
+    - target: {fileID: 1347702615910409586, guid: 8128cb10c6d6ca44d8c132f6627e0bdb, type: 3}
+      propertyPath: previousEatenMaterials.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1855255433129596616, guid: 8128cb10c6d6ca44d8c132f6627e0bdb, type: 3}
       propertyPath: m_Enabled

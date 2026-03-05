@@ -42,9 +42,14 @@ public class MouseScript : MonoBehaviour
     [Space(5.0f)]
     [Header("list of the previous eaten objects")]
     public List<GameObject> previousEatenMaterials;
+    [Space(5.0f)]
+    [Header("List of the puke variants")]
+    public Material[] pukeMaterials;
 
     [HideInInspector]
     public GameObject cheeseBlockToEat;
+
+    [HideInInspector]
     public Vector3 rayCastOffset;
     Vector3 playerStartPosition;
     // rigid
@@ -195,7 +200,19 @@ public class MouseScript : MonoBehaviour
     }
     void setThrowUpBlock(GameObject _throwingUpBlock, GameObject _lastEatenMaterial)
     {
-        _throwingUpBlock.GetComponent<MeshRenderer>().material = _lastEatenMaterial.GetComponent<MeshRenderer>().material;
+        Teeth preTeethType = _lastEatenMaterial.GetComponent<CheesePrefabClass>().neededTeeth.chosenTeethSet;
+        if (preTeethType == Teeth.cheeseTeeth)
+        {
+            _throwingUpBlock.GetComponent<MeshRenderer>().material = pukeMaterials[0];
+        }
+        if (preTeethType == Teeth.clothTeeth)
+        {
+            _throwingUpBlock.GetComponent<MeshRenderer>().material = pukeMaterials[1];
+        }
+        if (preTeethType == Teeth.woodTeeth)
+        {
+            _throwingUpBlock.GetComponent<MeshRenderer>().material = pukeMaterials[2];
+        }
         _throwingUpBlock.GetComponent<CheesePrefabClass>().neededTeeth = _lastEatenMaterial.GetComponent<CheesePrefabClass>().neededTeeth;
     }
     void manageEatenMaterial()
