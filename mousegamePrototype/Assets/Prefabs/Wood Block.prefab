@@ -66,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1b4051227bde2394fbf744cc1efa77f4, type: 2}
+  - {fileID: 2100000, guid: 6bb041fb0c77bf4418c7771e0071fd82, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -127,3 +127,4 @@ MonoBehaviour:
   neededTeeth: {fileID: 11400000, guid: fc5052030cbb7f44daec548b6a4822c9, type: 2}
   foodPoints: 1
   ms: {fileID: 0}
+  eaten: 0
