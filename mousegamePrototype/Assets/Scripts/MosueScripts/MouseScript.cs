@@ -13,6 +13,8 @@ public class MouseScript : MonoBehaviour
     float rotationAmount = 5.0f;
     [SerializeField]
     float jumpAmount = 10.0f;
+    [SerializeField]
+    float clothJumpBonus = 2.0f;
 
     [Space(10.0f)]
     [Header("Current Teeth set on the mouse")]
@@ -145,14 +147,19 @@ public class MouseScript : MonoBehaviour
     void mouseMovement()
     {
         // calculating movement
+
+        
         Vector3 movement = (transform.right * xInput + transform.forward * zInput) * speed;
+
+        movement.y = checkBlockOfCheese();
+        jumpPulse += clothBlockCheck();
         Vector3 rotation = new Vector3(0, yRotation, 0);
 
         transform.position += movement * Time.deltaTime;
         sceneCamera.position += movement * Time.deltaTime;
 
         // apply jump
-        rb.AddForce(new Vector3(0, jumpPulse * 20, 0), ForceMode.Impulse);
+        rb.AddForce(new Vector3(0, jumpPulse * 10, 0), ForceMode.Impulse);
     }
 
 
@@ -177,6 +184,7 @@ public class MouseScript : MonoBehaviour
 
             GameObject pukeBlock = Instantiate(throwUpBlock, pos, Quaternion.identity);
             pukeBlock.GetComponent<CheesePrefabClass>().playerTransform = transform;
+            pukeBlock.GetComponent<CheesePrefabClass>().eaten = true;
             setThrowUpBlock(pukeBlock, materialThrowingUp);
             foodMeter--;
             eventcore.MouseEatingCheese.Invoke(this);
@@ -202,9 +210,44 @@ public class MouseScript : MonoBehaviour
         }
         return false;
     }
-    void checkBlockOfCheese()
-    {
 
+    float clothBlockCheck()
+    {
+        if (Physics.Raycast(transform.position, transform.up * -1, out RaycastHit hit, 0.5f))
+        {
+            if (hit.collider.gameObject.GetComponent<CheesePrefabClass>() == null)
+            {
+                return 0;
+            }
+
+            CheesePrefabClass Cheese = hit.collider.gameObject.GetComponent<CheesePrefabClass>();
+
+            if (Cheese.neededTeeth.chosenTeethSet == Teeth.clothTeeth && Cheese.eaten)
+            {
+                return clothJumpBonus;
+            }
+        }
+        return 0;
+    }
+    float checkBlockOfCheese()
+    {
+       // Debug.DrawLine(transform.position - new Vector3(0, .2f, 0), (transform.position - new Vector3(0, .2f, 0)) + transform.forward, Color.red);
+        if (Physics.Raycast(transform.position - new Vector3(0,.2f,0), transform.forward, out RaycastHit hit, 1))
+        {
+            if (hit.collider.gameObject.GetComponent<CheesePrefabClass>() == null)
+            {
+                return 0;
+            }
+
+            CheesePrefabClass Cheese = hit.collider.gameObject.GetComponent<CheesePrefabClass>();
+
+            if (Cheese.neededTeeth.chosenTeethSet == Teeth.cheeseTeeth && Cheese.eaten)
+            {
+                return 5;
+            }
+           
+        }
+        return 0;
     }
     void resetPlayState()
     {

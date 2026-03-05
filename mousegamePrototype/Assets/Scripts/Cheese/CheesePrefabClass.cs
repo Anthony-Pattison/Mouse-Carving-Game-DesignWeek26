@@ -29,7 +29,7 @@ public class CheesePrefabClass : MonoBehaviour
     public MouseScript ms;
     BoxCollider myBoxCollider;
     Material fadeMaterial;
-    bool eaten = false;
+    public bool eaten = false;
     private void Start()
     {
         eventcore = GameObject.Find("EventCore").GetComponent<EventCore>();
