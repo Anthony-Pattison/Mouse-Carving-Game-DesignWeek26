@@ -10,7 +10,7 @@ public class TeethChange : MonoBehaviour
     private void Start()
     {
         eventcore = GameObject.Find("EventCore").GetComponent<EventCore>();
-        
+        player = GameObject.Find("mousePlayer").transform;
     }
     private void Update()
     {

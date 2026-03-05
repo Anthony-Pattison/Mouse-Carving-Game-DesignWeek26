@@ -74472,6 +74472,67 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 923c498e1f4e7ec4c9c85c0968353062, type: 3}
+--- !u!1001 &6239278499851252534
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2682467607784158903, guid: b10231cab082a394087752222ff1e495, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1669144344}
+    - target: {fileID: 4675137226601309088, guid: b10231cab082a394087752222ff1e495, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -54.258
+      objectReference: {fileID: 0}
+    - target: {fileID: 4675137226601309088, guid: b10231cab082a394087752222ff1e495, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.688
+      objectReference: {fileID: 0}
+    - target: {fileID: 4675137226601309088, guid: b10231cab082a394087752222ff1e495, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -23.951
+      objectReference: {fileID: 0}
+    - target: {fileID: 4675137226601309088, guid: b10231cab082a394087752222ff1e495, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4675137226601309088, guid: b10231cab082a394087752222ff1e495, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4675137226601309088, guid: b10231cab082a394087752222ff1e495, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4675137226601309088, guid: b10231cab082a394087752222ff1e495, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4675137226601309088, guid: b10231cab082a394087752222ff1e495, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4675137226601309088, guid: b10231cab082a394087752222ff1e495, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4675137226601309088, guid: b10231cab082a394087752222ff1e495, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9157081014695537934, guid: b10231cab082a394087752222ff1e495, type: 3}
+      propertyPath: m_Name
+      value: ChainSawTeeth
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b10231cab082a394087752222ff1e495, type: 3}
 --- !u!1001 &6807446231834366332
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -74616,6 +74677,7 @@ SceneRoots:
   - {fileID: 827448502}
   - {fileID: 5535977376757086742}
   - {fileID: 6807446231834366332}
+  - {fileID: 6239278499851252534}
   - {fileID: 559085436}
   - {fileID: 362621501}
   - {fileID: 1649720723}
