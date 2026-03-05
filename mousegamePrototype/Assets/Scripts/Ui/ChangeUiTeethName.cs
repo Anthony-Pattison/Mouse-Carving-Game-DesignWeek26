@@ -7,6 +7,9 @@ public class ChangeUiTeethName : MonoBehaviour
 {
     EventCore eventCore;
     public TextMeshProUGUI hungerText;
+    public Image teethImage;
+    public Sprite cheeseTeeth;
+    public Sprite fabricTeeth;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,6 +22,14 @@ public class ChangeUiTeethName : MonoBehaviour
     void callText(TeethObjects ms)
     {
         GetComponent<TextMeshProUGUI>().text = ms.chosenTeethSet.ToString();
+        if (ms.chosenTeethSet.ToString() == "cheeseTeeth")
+        {
+            teethImage.sprite = cheeseTeeth;
+        }
+        if (ms.chosenTeethSet.ToString() == "clothTeeth")
+        {
+            teethImage.sprite = fabricTeeth;
+        }
     }
     void changeHunger(MouseScript ms)
     {
