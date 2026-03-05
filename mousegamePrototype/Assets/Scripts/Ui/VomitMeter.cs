@@ -13,6 +13,9 @@ public class VomitMeter : MonoBehaviour
     public Color yellow;
     public Color red;
     public Color brown;
+    public Sprite cheeseSprite;
+    public Sprite clothSprite;
+    public Sprite woodSprite;
 
     public TeethObjects cheeseTeeth;
     public TeethObjects clothTeeth;
@@ -47,19 +50,19 @@ public class VomitMeter : MonoBehaviour
             if (go.GetComponent<CheesePrefabClass>().neededTeeth == cheeseTeeth)
             {
                 uiElements[index].SetActive(true);
-                uiElements[index].GetComponent<Image>().color = yellow;
+                uiElements[index].GetComponent<Image>().sprite = cheeseSprite;
                 index++;
             }
             if (go.GetComponent<CheesePrefabClass>().neededTeeth == clothTeeth)
             {
                 uiElements[index].SetActive(true);
-                uiElements[index].GetComponent<Image>().color = red;
+                uiElements[index].GetComponent<Image>().sprite = clothSprite;
                 index++;
             }
             if (go.GetComponent<CheesePrefabClass>().neededTeeth == woodTeeth)
             {
                 uiElements[index].SetActive(true);
-                uiElements[index].GetComponent<Image>().color = brown;
+                uiElements[index].GetComponent<Image>().sprite = woodSprite;
                 index++;
             }
         }

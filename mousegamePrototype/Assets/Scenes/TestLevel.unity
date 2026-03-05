@@ -3997,7 +3997,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.60154366, g: 0.6320754, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -19921,7 +19921,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.60154366, g: 0.6320754, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -25562,7 +25562,7 @@ MonoBehaviour:
   distanceForDisable: 5
   playerTransform: {fileID: 1669144344}
   sidesWidthCubes: 0
-  neededTeeth: {fileID: 11400000, guid: 199f5952b7f15134eba4b7e53f80581c, type: 2}
+  neededTeeth: {fileID: 11400000, guid: 413f312abd0260443aedc77373d1b506, type: 2}
   foodPoints: 1
   ms: {fileID: 1669144348}
   eaten: 0
@@ -41901,6 +41901,9 @@ MonoBehaviour:
   yellow: {r: 0.6981132, g: 0.6822294, b: 0.023050921, a: 1}
   red: {r: 0.5660378, g: 0, b: 0, a: 1}
   brown: {r: 0.3301887, g: 0.1766854, b: 0, a: 1}
+  cheeseSprite: {fileID: 21300000, guid: 8cbc6b02d05cbdb45bc559eb48eabcea, type: 3}
+  clothSprite: {fileID: 21300000, guid: accf311e028449141bb6753484a8843d, type: 3}
+  woodSprite: {fileID: 21300000, guid: a6f466a5b15819342845325efd402ad2, type: 3}
   cheeseTeeth: {fileID: 11400000, guid: 199f5952b7f15134eba4b7e53f80581c, type: 2}
   clothTeeth: {fileID: 11400000, guid: 413f312abd0260443aedc77373d1b506, type: 2}
   woodTeeth: {fileID: 11400000, guid: fc5052030cbb7f44daec548b6a4822c9, type: 2}
@@ -42583,7 +42586,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1199678916
 RectTransform:
   m_ObjectHideFlags: 0
@@ -59212,7 +59215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.60154366, g: 0.6320754, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -59863,7 +59866,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.60154366, g: 0.6320754, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -71097,7 +71100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.60154366, g: 0.6320754, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
