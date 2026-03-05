@@ -169,7 +169,7 @@ MonoBehaviour:
   distanceForDisable: 5
   playerTransform: {fileID: 1669144344}
   sidesWidthCubes: 0
-  neededTeeth: {fileID: 11400000, guid: 199f5952b7f15134eba4b7e53f80581c, type: 2}
+  neededTeeth: {fileID: 11400000, guid: 413f312abd0260443aedc77373d1b506, type: 2}
   foodPoints: 0
   ms: {fileID: 1669144348}
   eaten: 0
@@ -609,7 +609,7 @@ MonoBehaviour:
   distanceForDisable: 5
   playerTransform: {fileID: 1669144344}
   sidesWidthCubes: 0
-  neededTeeth: {fileID: 11400000, guid: 199f5952b7f15134eba4b7e53f80581c, type: 2}
+  neededTeeth: {fileID: 11400000, guid: 413f312abd0260443aedc77373d1b506, type: 2}
   foodPoints: 0
   ms: {fileID: 1669144348}
   eaten: 0
@@ -4072,7 +4072,7 @@ MonoBehaviour:
   distanceForDisable: 5
   playerTransform: {fileID: 1669144344}
   sidesWidthCubes: 0
-  neededTeeth: {fileID: 11400000, guid: 199f5952b7f15134eba4b7e53f80581c, type: 2}
+  neededTeeth: {fileID: 11400000, guid: 413f312abd0260443aedc77373d1b506, type: 2}
   foodPoints: 0
   ms: {fileID: 1669144348}
   eaten: 0
@@ -7829,7 +7829,7 @@ MonoBehaviour:
   distanceForDisable: 5
   playerTransform: {fileID: 1669144344}
   sidesWidthCubes: 0
-  neededTeeth: {fileID: 11400000, guid: 199f5952b7f15134eba4b7e53f80581c, type: 2}
+  neededTeeth: {fileID: 11400000, guid: 413f312abd0260443aedc77373d1b506, type: 2}
   foodPoints: 0
   ms: {fileID: 1669144348}
   eaten: 0
@@ -9477,7 +9477,7 @@ MonoBehaviour:
   distanceForDisable: 5
   playerTransform: {fileID: 1669144344}
   sidesWidthCubes: 0
-  neededTeeth: {fileID: 11400000, guid: 199f5952b7f15134eba4b7e53f80581c, type: 2}
+  neededTeeth: {fileID: 11400000, guid: 413f312abd0260443aedc77373d1b506, type: 2}
   foodPoints: 0
   ms: {fileID: 1669144348}
   eaten: 0
@@ -9917,7 +9917,7 @@ MonoBehaviour:
   distanceForDisable: 5
   playerTransform: {fileID: 1669144344}
   sidesWidthCubes: 0
-  neededTeeth: {fileID: 11400000, guid: 199f5952b7f15134eba4b7e53f80581c, type: 2}
+  neededTeeth: {fileID: 11400000, guid: 413f312abd0260443aedc77373d1b506, type: 2}
   foodPoints: 0
   ms: {fileID: 1669144348}
   eaten: 0
@@ -19481,7 +19481,7 @@ MonoBehaviour:
   distanceForDisable: 5
   playerTransform: {fileID: 1669144344}
   sidesWidthCubes: 0
-  neededTeeth: {fileID: 11400000, guid: 199f5952b7f15134eba4b7e53f80581c, type: 2}
+  neededTeeth: {fileID: 11400000, guid: 413f312abd0260443aedc77373d1b506, type: 2}
   foodPoints: 0
   ms: {fileID: 1669144348}
   eaten: 0
@@ -20620,7 +20620,7 @@ MonoBehaviour:
   distanceForDisable: 5
   playerTransform: {fileID: 1669144344}
   sidesWidthCubes: 0
-  neededTeeth: {fileID: 11400000, guid: 199f5952b7f15134eba4b7e53f80581c, type: 2}
+  neededTeeth: {fileID: 11400000, guid: 413f312abd0260443aedc77373d1b506, type: 2}
   foodPoints: 0
   ms: {fileID: 1669144348}
   eaten: 0
@@ -25695,7 +25695,7 @@ MonoBehaviour:
   distanceForDisable: 5
   playerTransform: {fileID: 1669144344}
   sidesWidthCubes: 0
-  neededTeeth: {fileID: 11400000, guid: 199f5952b7f15134eba4b7e53f80581c, type: 2}
+  neededTeeth: {fileID: 11400000, guid: 413f312abd0260443aedc77373d1b506, type: 2}
   foodPoints: 0
   ms: {fileID: 1669144348}
   eaten: 0
@@ -29804,7 +29804,7 @@ MonoBehaviour:
   distanceForDisable: 5
   playerTransform: {fileID: 1669144344}
   sidesWidthCubes: 0
-  neededTeeth: {fileID: 11400000, guid: 199f5952b7f15134eba4b7e53f80581c, type: 2}
+  neededTeeth: {fileID: 11400000, guid: 413f312abd0260443aedc77373d1b506, type: 2}
   foodPoints: 0
   ms: {fileID: 1669144348}
   eaten: 0
@@ -31677,7 +31677,7 @@ MonoBehaviour:
   distanceForDisable: 5
   playerTransform: {fileID: 1669144344}
   sidesWidthCubes: 0
-  neededTeeth: {fileID: 11400000, guid: 199f5952b7f15134eba4b7e53f80581c, type: 2}
+  neededTeeth: {fileID: 11400000, guid: 413f312abd0260443aedc77373d1b506, type: 2}
   foodPoints: 0
   ms: {fileID: 1669144348}
   eaten: 0
@@ -34703,7 +34703,7 @@ MonoBehaviour:
   distanceForDisable: 5
   playerTransform: {fileID: 1669144344}
   sidesWidthCubes: 0
-  neededTeeth: {fileID: 11400000, guid: 199f5952b7f15134eba4b7e53f80581c, type: 2}
+  neededTeeth: {fileID: 11400000, guid: 413f312abd0260443aedc77373d1b506, type: 2}
   foodPoints: 0
   ms: {fileID: 1669144348}
   eaten: 0
@@ -37027,7 +37027,7 @@ MonoBehaviour:
   distanceForDisable: 5
   playerTransform: {fileID: 1669144344}
   sidesWidthCubes: 0
-  neededTeeth: {fileID: 11400000, guid: 199f5952b7f15134eba4b7e53f80581c, type: 2}
+  neededTeeth: {fileID: 11400000, guid: 413f312abd0260443aedc77373d1b506, type: 2}
   foodPoints: 0
   ms: {fileID: 1669144348}
   eaten: 0
@@ -42910,7 +42910,7 @@ MonoBehaviour:
   distanceForDisable: 5
   playerTransform: {fileID: 1669144344}
   sidesWidthCubes: 0
-  neededTeeth: {fileID: 11400000, guid: 199f5952b7f15134eba4b7e53f80581c, type: 2}
+  neededTeeth: {fileID: 11400000, guid: 413f312abd0260443aedc77373d1b506, type: 2}
   foodPoints: 0
   ms: {fileID: 0}
   eaten: 0
@@ -44394,7 +44394,7 @@ MonoBehaviour:
   distanceForDisable: 5
   playerTransform: {fileID: 1669144344}
   sidesWidthCubes: 0
-  neededTeeth: {fileID: 11400000, guid: 199f5952b7f15134eba4b7e53f80581c, type: 2}
+  neededTeeth: {fileID: 11400000, guid: 413f312abd0260443aedc77373d1b506, type: 2}
   foodPoints: 0
   ms: {fileID: 1669144348}
   eaten: 0
@@ -44678,7 +44678,7 @@ MonoBehaviour:
   distanceForDisable: 5
   playerTransform: {fileID: 1669144344}
   sidesWidthCubes: 0
-  neededTeeth: {fileID: 11400000, guid: 199f5952b7f15134eba4b7e53f80581c, type: 2}
+  neededTeeth: {fileID: 11400000, guid: 413f312abd0260443aedc77373d1b506, type: 2}
   foodPoints: 0
   ms: {fileID: 1669144348}
   eaten: 0
@@ -46222,7 +46222,7 @@ MonoBehaviour:
   distanceForDisable: 5
   playerTransform: {fileID: 1669144344}
   sidesWidthCubes: 0
-  neededTeeth: {fileID: 11400000, guid: 199f5952b7f15134eba4b7e53f80581c, type: 2}
+  neededTeeth: {fileID: 11400000, guid: 413f312abd0260443aedc77373d1b506, type: 2}
   foodPoints: 0
   ms: {fileID: 1669144348}
   eaten: 0
@@ -46506,7 +46506,7 @@ MonoBehaviour:
   distanceForDisable: 5
   playerTransform: {fileID: 1669144344}
   sidesWidthCubes: 0
-  neededTeeth: {fileID: 11400000, guid: 199f5952b7f15134eba4b7e53f80581c, type: 2}
+  neededTeeth: {fileID: 11400000, guid: 413f312abd0260443aedc77373d1b506, type: 2}
   foodPoints: 0
   ms: {fileID: 1669144348}
   eaten: 0
@@ -47414,7 +47414,7 @@ MonoBehaviour:
   distanceForDisable: 5
   playerTransform: {fileID: 1669144344}
   sidesWidthCubes: 0
-  neededTeeth: {fileID: 11400000, guid: 199f5952b7f15134eba4b7e53f80581c, type: 2}
+  neededTeeth: {fileID: 11400000, guid: 413f312abd0260443aedc77373d1b506, type: 2}
   foodPoints: 0
   ms: {fileID: 1669144348}
   eaten: 0
@@ -49054,7 +49054,7 @@ MonoBehaviour:
   distanceForDisable: 5
   playerTransform: {fileID: 1669144344}
   sidesWidthCubes: 0
-  neededTeeth: {fileID: 11400000, guid: 199f5952b7f15134eba4b7e53f80581c, type: 2}
+  neededTeeth: {fileID: 11400000, guid: 413f312abd0260443aedc77373d1b506, type: 2}
   foodPoints: 0
   ms: {fileID: 1669144348}
   eaten: 0
@@ -63319,7 +63319,7 @@ MonoBehaviour:
   distanceForDisable: 5
   playerTransform: {fileID: 1669144344}
   sidesWidthCubes: 0
-  neededTeeth: {fileID: 11400000, guid: 199f5952b7f15134eba4b7e53f80581c, type: 2}
+  neededTeeth: {fileID: 11400000, guid: 413f312abd0260443aedc77373d1b506, type: 2}
   foodPoints: 0
   ms: {fileID: 1669144348}
   eaten: 0
@@ -64344,7 +64344,7 @@ MonoBehaviour:
   distanceForDisable: 5
   playerTransform: {fileID: 1669144344}
   sidesWidthCubes: 0
-  neededTeeth: {fileID: 11400000, guid: 199f5952b7f15134eba4b7e53f80581c, type: 2}
+  neededTeeth: {fileID: 11400000, guid: 413f312abd0260443aedc77373d1b506, type: 2}
   foodPoints: 0
   ms: {fileID: 1669144348}
   eaten: 0
@@ -67388,7 +67388,7 @@ MonoBehaviour:
   distanceForDisable: 5
   playerTransform: {fileID: 1669144344}
   sidesWidthCubes: 0
-  neededTeeth: {fileID: 11400000, guid: 199f5952b7f15134eba4b7e53f80581c, type: 2}
+  neededTeeth: {fileID: 11400000, guid: 413f312abd0260443aedc77373d1b506, type: 2}
   foodPoints: 0
   ms: {fileID: 1669144348}
   eaten: 0
@@ -70577,7 +70577,7 @@ MonoBehaviour:
   distanceForDisable: 5
   playerTransform: {fileID: 1669144344}
   sidesWidthCubes: 0
-  neededTeeth: {fileID: 11400000, guid: 199f5952b7f15134eba4b7e53f80581c, type: 2}
+  neededTeeth: {fileID: 11400000, guid: 413f312abd0260443aedc77373d1b506, type: 2}
   foodPoints: 0
   ms: {fileID: 1669144348}
   eaten: 0
@@ -70813,7 +70813,7 @@ MonoBehaviour:
   distanceForDisable: 5
   playerTransform: {fileID: 1669144344}
   sidesWidthCubes: 0
-  neededTeeth: {fileID: 11400000, guid: 199f5952b7f15134eba4b7e53f80581c, type: 2}
+  neededTeeth: {fileID: 11400000, guid: 413f312abd0260443aedc77373d1b506, type: 2}
   foodPoints: 0
   ms: {fileID: 1669144348}
   eaten: 0
@@ -72372,7 +72372,7 @@ MonoBehaviour:
   distanceForDisable: 5
   playerTransform: {fileID: 1669144344}
   sidesWidthCubes: 0
-  neededTeeth: {fileID: 11400000, guid: 199f5952b7f15134eba4b7e53f80581c, type: 2}
+  neededTeeth: {fileID: 11400000, guid: 413f312abd0260443aedc77373d1b506, type: 2}
   foodPoints: 0
   ms: {fileID: 1669144348}
   eaten: 0
@@ -72500,7 +72500,7 @@ MonoBehaviour:
   distanceForDisable: 5
   playerTransform: {fileID: 1669144344}
   sidesWidthCubes: 0
-  neededTeeth: {fileID: 11400000, guid: 199f5952b7f15134eba4b7e53f80581c, type: 2}
+  neededTeeth: {fileID: 11400000, guid: 413f312abd0260443aedc77373d1b506, type: 2}
   foodPoints: 0
   ms: {fileID: 1669144348}
   eaten: 0

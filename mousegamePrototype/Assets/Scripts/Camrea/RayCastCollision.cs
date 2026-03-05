@@ -22,7 +22,7 @@ public class RayCastCollision : MonoBehaviour
 
             if (hitObject.CompareTag("TeethSwap"))
             {
-                if (Input.GetMouseButton(0) && Input.GetKeyDown(KeyCode.F)) {
+                if (Input.GetMouseButton(0)) {
                     hitObject.GetComponent<TeethChange>().changeTeeth();
                 }
             }
