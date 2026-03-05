@@ -15,10 +15,11 @@ public class RayCastCollision : MonoBehaviour
     }
     void Update()
     {
+        Debug.DrawRay(transform.position, transform.forward * raycastDistance);
+        ms.rayCastOffset = transform.forward * raycastDistance;
         if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, raycastDistance))
         {
             GameObject hitObject = hit.collider.gameObject;
-            Debug.DrawRay(transform.position, transform.forward * raycastDistance);
 
             if (hitObject.CompareTag("TeethSwap"))
             {
