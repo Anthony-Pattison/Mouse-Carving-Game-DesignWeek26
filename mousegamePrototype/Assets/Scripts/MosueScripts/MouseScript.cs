@@ -44,6 +44,7 @@ public class MouseScript : MonoBehaviour
 
     [HideInInspector]
     public GameObject cheeseBlockToEat;
+    public Vector3 rayCastOffset;
     Vector3 playerStartPosition;
     // rigid
     Rigidbody rb;
@@ -180,9 +181,10 @@ public class MouseScript : MonoBehaviour
 
             // spawn block
             Vector3 scaleOffset = transform.lossyScale;
-            Vector3 pos = transform.position + transform.forward;
+            Vector3 pos = transform.position + rayCastOffset + new Vector3(0,0.5f,0); ;
 
             GameObject pukeBlock = Instantiate(throwUpBlock, pos, Quaternion.identity);
+            pukeBlock.tag = "Puke";
             pukeBlock.GetComponent<CheesePrefabClass>().playerTransform = transform;
             pukeBlock.GetComponent<CheesePrefabClass>().eaten = true;
             setThrowUpBlock(pukeBlock, materialThrowingUp);
