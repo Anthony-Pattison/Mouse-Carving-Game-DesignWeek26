@@ -6,7 +6,7 @@ public class EventCore : MonoBehaviour
 {
     public UnityEvent<GameObject> CarveItem;
 
-    public UnityEvent<MouseScript> TeethChange;
+    public UnityEvent<TeethObjects> TeethChange;
 
     public UnityEvent<MouseScript> MouseEatingCheese;
 

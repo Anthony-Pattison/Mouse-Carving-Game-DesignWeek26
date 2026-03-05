@@ -16,9 +16,9 @@ public class ChangeUiTeethName : MonoBehaviour
 
     }
 
-    void callText(MouseScript ms)
+    void callText(TeethObjects ms)
     {
-        GetComponent<TextMeshProUGUI>().text = ms.teethSet.chosenTeethSet.ToString();
+        GetComponent<TextMeshProUGUI>().text = ms.chosenTeethSet.ToString();
     }
     void changeHunger(MouseScript ms)
     {

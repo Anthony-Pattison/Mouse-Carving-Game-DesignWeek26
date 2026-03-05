@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: WoodTeeth
   m_EditorClassIdentifier: 
   chosenTeethSet: 1
+  level: 3

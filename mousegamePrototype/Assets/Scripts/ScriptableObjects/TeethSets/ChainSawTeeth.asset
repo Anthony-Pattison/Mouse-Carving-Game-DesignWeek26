@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: ChainSawTeeth
   m_EditorClassIdentifier: 
   chosenTeethSet: 3
+  level: 4

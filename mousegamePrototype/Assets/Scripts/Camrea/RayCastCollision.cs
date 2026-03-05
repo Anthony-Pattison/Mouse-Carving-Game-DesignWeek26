@@ -6,18 +6,27 @@ public class RayCastCollision : MonoBehaviour
     [SerializeField]
     float raycastDistance = 0.5f;
     MouseScript ms;
+    EventCore eventcore;
     // Update is called once per frame
     private void Start()
     {
-        ms = GameObject.Find("mousePlayer").GetComponent<MouseScript>();
+        ms = GameObject.Find("mousePlayer").GetComponent <MouseScript>();
+        eventcore = GameObject.Find("EventCore").GetComponent <EventCore>();
     }
     void Update()
     {
-        Debug.DrawLine(transform.position, transform.position + new Vector3(0,0,raycastDistance));
         if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, raycastDistance))
         {
-            ms.cheeseBlockToEat = hit.collider.gameObject;
-            print(hit.collider.name);
+            GameObject hitObject = hit.collider.gameObject;
+            Debug.DrawRay(transform.position, transform.forward * raycastDistance);
+
+            if (hitObject.CompareTag("TeethSwap"))
+            {
+                if (Input.GetMouseButton(0) && Input.GetKeyDown(KeyCode.F)) {
+                    hitObject.GetComponent<TeethChange>().changeTeeth();
+                }
+            }
+            ms.cheeseBlockToEat = hitObject;
         }
     }
 }

@@ -43,14 +43,16 @@ public class CheesePrefabClass : MonoBehaviour
     {
         print("miss");
     }
-    public void turnOffCheese()
+    public bool turnOffCheese()
     {
-        if (ms.teethSet == neededTeeth && !eaten)
+        if (ms.teethSet.level >= neededTeeth.level && !eaten)
         {
             eaten = true;
             GetComponent<BoxCollider>().enabled = false;
             StartCoroutine(FadeOut());
+            return true;
         }
+        return false;
     }
     private void Update()
     {
@@ -130,6 +132,7 @@ public class CheesePrefabClass : MonoBehaviour
     }
     IEnumerator FadeOut()
     {
+        Material oldMaterial = GetComponentInChildren<MeshRenderer>().material;
         GetComponentInChildren<MeshRenderer>().material = fadeMaterial;
         float fadeOut = 1;
 
@@ -141,5 +144,6 @@ public class CheesePrefabClass : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
         }
         this.gameObject.SetActive(false);
+        GetComponentInChildren<MeshRenderer>().material = oldMaterial;
     }
 }

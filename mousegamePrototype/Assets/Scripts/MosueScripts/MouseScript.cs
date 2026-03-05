@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -31,8 +32,15 @@ public class MouseScript : MonoBehaviour
     [Header("For Resetting game State")]
     public KeyCode gameReset;
 
+    [Space(5.0f)]
+    [Header("Prefab for throwing up")]
     public GameObject throwUpBlock;
 
+    [Space(5.0f)]
+    [Header("list of the previous eaten objects")]
+    public List<GameObject> previousEatenMaterials;
+
+    [HideInInspector]
     public GameObject cheeseBlockToEat;
     Vector3 playerStartPosition;
     // rigid
@@ -52,8 +60,10 @@ public class MouseScript : MonoBehaviour
         rb = GetComponent<Rigidbody>();
 
         eventcore.ResetTheGame.AddListener(resetPlayState);
+        eventcore.TeethChange.AddListener(mouseChangeTeethSet);
+
         Cursor.lockState = CursorLockMode.Locked;
-        eventcore.TeethChange.Invoke(this);
+        eventcore.TeethChange.Invoke(teethSet);
     }
 
     // Update is called once per frame
@@ -61,14 +71,20 @@ public class MouseScript : MonoBehaviour
     {
         gettingInput();
         mouseMovement();
-        swappingTeeth();
         spittingOutFood();
         mouseInput();
+        manageEatenMaterial();
+
         if (Input.GetKeyDown(gameReset))
         {
             eventcore.ResetTheGame.Invoke();
         }
 
+    }
+
+    void mouseChangeTeethSet(TeethObjects newTeeth)
+    {
+        teethSet = newTeeth;
     }
 
     void mouseInput()
@@ -83,9 +99,18 @@ public class MouseScript : MonoBehaviour
 
     public void eatingItem(GameObject CarvedItem)
     {
+        CheesePrefabClass che = CarvedItem.GetComponent<CheesePrefabClass>();
 
-        CarvedItem.GetComponent<CheesePrefabClass>().turnOffCheese();
+        if (CarvedItem.GetComponent<CheesePrefabClass>() == null)
+        {
+            return;
+        }
+        if (!che.turnOffCheese())
+            return;
 
+        previousEatenMaterials.Add(CarvedItem);
+        
+        
         if (foodMeter < 5)
         {
             foodMeter++;
@@ -93,13 +118,7 @@ public class MouseScript : MonoBehaviour
         eventcore.MouseEatingCheese.Invoke(this);
 
     }
-    void swappingTeeth()
-    {
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            eventcore.TeethChange.Invoke(this);
-        }
-    }
+    
     void gettingInput()
     {
         // getting input
@@ -118,7 +137,7 @@ public class MouseScript : MonoBehaviour
         {
             yRotation = -rotationAmount;
         }
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded())
         {
             jumpPulse = jumpAmount;
         }
@@ -140,21 +159,53 @@ public class MouseScript : MonoBehaviour
 
     void spittingOutFood()
     {
-        if (foodMeter < 5)
-            return;
         if (Input.GetMouseButtonDown(1))
         {
+            
+            // remove form eaten items
+            int itemPlace = previousEatenMaterials.Count - 1;
+            if (itemPlace < 0)
+            {
+                return;
+            }
+            GameObject materialThrowingUp = previousEatenMaterials[itemPlace];
+            previousEatenMaterials.RemoveAt(itemPlace);
+
+            // spawn block
             Vector3 scaleOffset = transform.lossyScale;
             Vector3 pos = transform.position + transform.forward;
 
             GameObject pukeBlock = Instantiate(throwUpBlock, pos, Quaternion.identity);
-
             pukeBlock.GetComponent<CheesePrefabClass>().playerTransform = transform;
-            foodMeter = 0;
+            setThrowUpBlock(pukeBlock, materialThrowingUp);
+            foodMeter--;
             eventcore.MouseEatingCheese.Invoke(this);
         }
     }
+    void setThrowUpBlock(GameObject _throwingUpBlock, GameObject _lastEatenMaterial)
+    {
+        _throwingUpBlock.GetComponent<MeshRenderer>().material = _lastEatenMaterial.GetComponent<MeshRenderer>().material;
+        _throwingUpBlock.GetComponent<CheesePrefabClass>().neededTeeth = _lastEatenMaterial.GetComponent<CheesePrefabClass>().neededTeeth;
+    }
+    void manageEatenMaterial()
+    {
+        if (previousEatenMaterials.Count > 5)
+        {
+            previousEatenMaterials.Remove(previousEatenMaterials[0]);
+        }
+    }
+    bool isGrounded()
+    {
+        if (Physics.Raycast(transform.position, transform.up * -1, out RaycastHit hit, 0.5f))
+        {
+            return true;
+        }
+        return false;
+    }
+    void checkBlockOfCheese()
+    {
 
+    }
     void resetPlayState()
     {
         transform.position = playerStartPosition;

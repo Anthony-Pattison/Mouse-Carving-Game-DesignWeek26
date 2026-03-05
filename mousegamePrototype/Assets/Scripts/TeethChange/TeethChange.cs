@@ -8,21 +8,11 @@ public class TeethChange : MonoBehaviour
     private void Start()
     {
         eventcore = GameObject.Find("EventCore").GetComponent<EventCore>();
-        eventcore.TeethChange.AddListener(changeTeeth);
+        
     }
-    private void OnTriggerStay(Collider other)
+    
+    public void changeTeeth()
     {
-        mouseHere = true;
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        mouseHere = false;
-    }
-    void changeTeeth(MouseScript ms)
-    {
-        if (mouseHere)
-        {
-          ms.teethSet = teeth;
-        }
+        eventcore.TeethChange.Invoke(teeth);
     }
 }
