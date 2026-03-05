@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: ClothTeeth
   m_EditorClassIdentifier: 
   chosenTeethSet: 2
+  level: 2

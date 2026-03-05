@@ -5,24 +5,23 @@ public class TeethChange : MonoBehaviour
     public TeethObjects teeth;
     EventCore eventcore;
     public bool mouseHere;
+    public bool lookAtPlayer;
+    public Transform player;
     private void Start()
     {
         eventcore = GameObject.Find("EventCore").GetComponent<EventCore>();
-        eventcore.TeethChange.AddListener(changeTeeth);
+        
     }
-    private void OnTriggerStay(Collider other)
+    private void Update()
     {
-        mouseHere = true;
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        mouseHere = false;
-    }
-    void changeTeeth(MouseScript ms)
-    {
-        if (mouseHere)
+        if (lookAtPlayer)
         {
-          ms.teethSet = teeth;
+            transform.LookAt(player);
         }
+    }
+    public void changeTeeth()
+    {
+        eventcore.TeethChange.Invoke(teeth);
+       
     }
 }
