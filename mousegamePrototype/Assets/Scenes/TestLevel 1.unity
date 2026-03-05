@@ -8199,6 +8199,7 @@ GameObject:
   m_Component:
   - component: {fileID: 227662071}
   - component: {fileID: 227662070}
+  - component: {fileID: 227662072}
   m_Layer: 0
   m_Name: EventCore
   m_TagString: Untagged
@@ -8236,6 +8237,9 @@ MonoBehaviour:
   ResetTheGame:
     m_PersistentCalls:
       m_Calls: []
+  playSound:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &227662071
 Transform:
   m_ObjectHideFlags: 0
@@ -8251,6 +8255,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &227662072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 227662069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0e9c0b0879a757429fe9c949613c8bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &232615700
 GameObject:
   m_ObjectHideFlags: 0
@@ -79525,6 +79541,10 @@ PrefabInstance:
       propertyPath: throwUpBlock
       value: 
       objectReference: {fileID: 7352501297503255339, guid: a4439386dcd20094dac1c8750d29bb28, type: 3}
+    - target: {fileID: 1347702615910409586, guid: 8128cb10c6d6ca44d8c132f6627e0bdb, type: 3}
+      propertyPath: ac.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1347702615910409586, guid: 8128cb10c6d6ca44d8c132f6627e0bdb, type: 3}
       propertyPath: clothJumpBonus
       value: 0.5

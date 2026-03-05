@@ -15,6 +15,9 @@ public class EventCore : MonoBehaviour
     public UnityEvent collectPeanut;
 
     public UnityEvent ResetTheGame;
+
+    public UnityEvent<AudioClip> playSound;
+
     private void Start()
     {
         Application.targetFrameRate = 1000;

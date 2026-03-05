@@ -2,11 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
+[System.Serializable]
+public struct audioClip
+{
+    public string soundName;
+    public AudioClip audio;
+
+    
+}
+
 
 public class MouseScript : MonoBehaviour
 {
     EventCore eventcore;
-
+    public audioClip[] ac;
     [Header("For mouse movement")]
     [SerializeField]
     float speed = 5.0f;
