@@ -12,6 +12,8 @@ public class MouseScript : MonoBehaviour
 {
     EventCore eventcore;
     public audioClip[] pukeSounds;
+    public audioClip[] squeakSounds;
+
     [Header("For mouse movement")]
     [SerializeField]
     float speed = 5.0f;
@@ -136,6 +138,10 @@ public class MouseScript : MonoBehaviour
     void gettingInput()
     {
         // getting input
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            eventcore.GetComponent<AuidoManager>().playOneShot(squeakSounds[Random.Range(0, pukeSounds.Length - 1)].audio);
+        }
 
         // movement
         xInput = Input.GetAxis("Horizontal");
