@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 [System.Serializable]
 public struct audioClip
 {
@@ -13,7 +14,7 @@ public class MouseScript : MonoBehaviour
     EventCore eventcore;
     public audioClip[] pukeSounds;
     public audioClip[] squeakSounds;
-
+    public audioClip[] eatingSounds;
     [Header("For mouse movement")]
     [SerializeField]
     float speed = 5.0f;
@@ -96,6 +97,11 @@ public class MouseScript : MonoBehaviour
             eventcore.ResetTheGame.Invoke();
         }
 
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(1);
+        }
+
     }
 
     void mouseChangeTeethSet(TeethObjects newTeeth)
@@ -125,6 +131,7 @@ public class MouseScript : MonoBehaviour
             return;
 
         previousEatenMaterials.Add(CarvedItem);
+        eventcore.GetComponent<AuidoManager>().playOneShot(eatingSounds[Random.Range(0, eatingSounds.Length - 1)].audio);
 
 
         if (foodMeter < 5)
