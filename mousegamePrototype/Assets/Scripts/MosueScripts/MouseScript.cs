@@ -11,7 +11,7 @@ public struct audioClip
 public class MouseScript : MonoBehaviour
 {
     EventCore eventcore;
-    public audioClip[] ac;
+    public audioClip[] pukeSounds;
     [Header("For mouse movement")]
     [SerializeField]
     float speed = 5.0f;
@@ -189,6 +189,7 @@ public class MouseScript : MonoBehaviour
             }
             GameObject materialThrowingUp = previousEatenMaterials[itemPlace];
             eventcore.mousePuking.Invoke();
+            eventcore.gameObject.GetComponent<AuidoManager>().playOneShot(pukeSounds[Random.Range(0, pukeSounds.Length)].audio);
             previousEatenMaterials.RemoveAt(itemPlace);
 
             // spawn block
