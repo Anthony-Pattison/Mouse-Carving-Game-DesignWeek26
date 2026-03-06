@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44252fc63d62043458dc8ead30c283d4, type: 3}
   m_Name: ChainSawTeeth
   m_EditorClassIdentifier: 
-  chosenTeethSet: 3
+  chosenTeethSet: 4
   level: 4

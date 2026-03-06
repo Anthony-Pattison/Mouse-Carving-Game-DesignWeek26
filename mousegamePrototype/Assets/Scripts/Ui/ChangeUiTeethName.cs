@@ -11,6 +11,7 @@ public class ChangeUiTeethName : MonoBehaviour
     public Sprite cheeseTeeth;
     public Sprite fabricTeeth;
     public Sprite woodTeeth;
+    public Sprite chainSawTeeth;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -34,6 +35,10 @@ public class ChangeUiTeethName : MonoBehaviour
         if (ms.chosenTeethSet.ToString() == "woodTeeth")
         {
             teethImage.sprite = woodTeeth;
+        }
+        if (ms.chosenTeethSet.ToString() == "chainSawTeeth")
+        {
+            teethImage.sprite = chainSawTeeth;
         }
     }
     void changeHunger(MouseScript ms)
