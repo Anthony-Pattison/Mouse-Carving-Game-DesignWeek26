@@ -79,7 +79,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e37f338331541f45ad85e686a39bf0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ac: []
+  pukeSounds:
+  - soundName: puke1
+    audio: {fileID: 8300000, guid: 4b1ac0c6359ceef42b1c77ed1d82abcb, type: 3}
+  - soundName: puke2
+    audio: {fileID: 8300000, guid: 642fe9bad8c54ff4e855c5c114f3e288, type: 3}
+  - soundName: puke3
+    audio: {fileID: 8300000, guid: d156abff2e5b6894b840083bbf19ac0c, type: 3}
+  - soundName: puke4
+    audio: {fileID: 8300000, guid: cc979735b5b82cc43836e1edcdfc0d23, type: 3}
   speed: 5
   rotationAmount: 50
   jumpAmount: 2

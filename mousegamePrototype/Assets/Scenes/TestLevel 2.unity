@@ -50609,6 +50609,7 @@ MonoBehaviour:
   cheeseTeeth: {fileID: 21300000, guid: 26368cdf3ef429045a106ff865c4edcc, type: 3}
   fabricTeeth: {fileID: 21300000, guid: 3108950eea034634db811eeadb29848b, type: 3}
   woodTeeth: {fileID: 21300000, guid: 94910a03bfeb6614d973b2fa5a668128, type: 3}
+  chainSawTeeth: {fileID: 0}
 --- !u!1 &1463386658
 GameObject:
   m_ObjectHideFlags: 0
@@ -74228,42 +74229,6 @@ PrefabInstance:
       propertyPath: sceneCamera
       value: 
       objectReference: {fileID: 1199857513}
-    - target: {fileID: 1347702615910409586, guid: 8128cb10c6d6ca44d8c132f6627e0bdb, type: 3}
-      propertyPath: ac.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1347702615910409586, guid: 8128cb10c6d6ca44d8c132f6627e0bdb, type: 3}
-      propertyPath: ac.Array.data[0].audio
-      value: 
-      objectReference: {fileID: 8300000, guid: 4b1ac0c6359ceef42b1c77ed1d82abcb, type: 3}
-    - target: {fileID: 1347702615910409586, guid: 8128cb10c6d6ca44d8c132f6627e0bdb, type: 3}
-      propertyPath: ac.Array.data[1].audio
-      value: 
-      objectReference: {fileID: 8300000, guid: 642fe9bad8c54ff4e855c5c114f3e288, type: 3}
-    - target: {fileID: 1347702615910409586, guid: 8128cb10c6d6ca44d8c132f6627e0bdb, type: 3}
-      propertyPath: ac.Array.data[2].audio
-      value: 
-      objectReference: {fileID: 8300000, guid: d156abff2e5b6894b840083bbf19ac0c, type: 3}
-    - target: {fileID: 1347702615910409586, guid: 8128cb10c6d6ca44d8c132f6627e0bdb, type: 3}
-      propertyPath: ac.Array.data[3].audio
-      value: 
-      objectReference: {fileID: 8300000, guid: cc979735b5b82cc43836e1edcdfc0d23, type: 3}
-    - target: {fileID: 1347702615910409586, guid: 8128cb10c6d6ca44d8c132f6627e0bdb, type: 3}
-      propertyPath: ac.Array.data[0].soundName
-      value: Puke1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1347702615910409586, guid: 8128cb10c6d6ca44d8c132f6627e0bdb, type: 3}
-      propertyPath: ac.Array.data[1].soundName
-      value: Puke2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1347702615910409586, guid: 8128cb10c6d6ca44d8c132f6627e0bdb, type: 3}
-      propertyPath: ac.Array.data[2].soundName
-      value: Puke3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1347702615910409586, guid: 8128cb10c6d6ca44d8c132f6627e0bdb, type: 3}
-      propertyPath: ac.Array.data[3].soundName
-      value: Puke4
-      objectReference: {fileID: 0}
     - target: {fileID: 4398279918938428920, guid: 8128cb10c6d6ca44d8c132f6627e0bdb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -25.74
